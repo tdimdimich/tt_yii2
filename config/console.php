@@ -1,7 +1,5 @@
 <?php
 
-Yii::setAlias('@tests', dirname(__DIR__) . '/tests');
-
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
@@ -27,5 +25,11 @@ return [
         ],
         'db' => $db,
     ],
+	'controllerMap' => [
+		'migrate' => [
+			'class' => 'yii\console\controllers\MigrateController',
+			'migrationTable' => 'yii_migration',
+		],
+	],
     'params' => $params,
 ];
