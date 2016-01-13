@@ -1,11 +1,14 @@
 <?php
 
+use app\models\Book;
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\web\View;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Book */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $this View */
+/* @var $model Book */
+/* @var $form ActiveForm */
 ?>
 
 <div class="book-form">
@@ -25,7 +28,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'author_id')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+		<?= Html::a('Отмена', Url::previous('books'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
