@@ -16,6 +16,7 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+				'' => 'book/index',
             ],
         ],
         'cache' => [
