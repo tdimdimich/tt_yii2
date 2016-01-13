@@ -29,12 +29,6 @@ class BookController extends Controller
 					],
 				],
 			],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
         ];
     }
 
@@ -61,9 +55,15 @@ class BookController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+		if(Yii::$app->request->isAjax){
+			return $this->renderAjax('view', [
+				'model' => $this->findModel($id),
+			]);
+		}else{
+			return $this->render('view', [
+				'model' => $this->findModel($id),
+			]);
+		}
     }
 
     /**
@@ -109,10 +109,9 @@ class BookController extends Controller
      * @return mixed
      */
     public function actionDelete($id)
-    {
+	{
         $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        return $this->redirect(Url::previous('books'));
     }
 
     /**
