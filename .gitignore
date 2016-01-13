@@ -1,0 +1,20 @@
+# ide files
+.idea
+.buildpath
+.project
+.settings
+nbproject
+
+# os files
+Thumbs.db
+.DS_Store
+
+# composer
+composer.lock
+/vendor
+
+# app files
+/config/db.php
+/runtime
+/web/assets
+
