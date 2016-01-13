@@ -17,7 +17,7 @@ class m160113_073352_InsertTestData extends Migration{
 			['Томас', 'Кормен'],
 		]);
 		// books
-		$cdate = date("Y-m-d H:i:s");
+		$cdate = gmdate("Y-m-d H:i:s");
 		$this->batchInsert('books', ['name', 'date_create', 'date_update', 'preview', 'date', 'author_id'], [
 			[
 				'Компиляторы. Принципы, технологии и инструментарий', $cdate, $cdate,

@@ -45,13 +45,16 @@ class Book extends ActiveRecord{
 	public function attributeLabels(){
 		return [
 			'id' => 'ID',
-			'name' => 'Name',
-			'date_create' => 'Date Create',
-			'date_update' => 'Date Update',
-			'preview' => 'Preview',
-			'date' => 'Date',
-			'author_id' => 'Author ID',
+			'name' => 'Нименование',
+			'date_create' => 'Дата добавления',
+			'preview' => 'Превью',
+			'date' => 'Дата выхода книги',
+			'author' => 'Автор',
 		];
+	}
+	
+	public function getAuthor(){
+		return $this->hasOne(Author::className(), ['id' => 'author_id']);
 	}
 
 }

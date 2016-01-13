@@ -46,4 +46,10 @@ class Author extends ActiveRecord
             'lastname' => 'Lastname',
         ];
     }
+	
+	
+	public function __toString(){
+		return $this->firstname.' '.$this->lastname;
+	}
+	
 }
