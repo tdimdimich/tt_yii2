@@ -48,8 +48,12 @@ class Author extends ActiveRecord
     }
 	
 	
-	public function __toString(){
+	public function getLabel(){
 		return $this->firstname.' '.$this->lastname;
+	}
+	
+	public function __toString(){
+		return $this->label;
 	}
 	
 }

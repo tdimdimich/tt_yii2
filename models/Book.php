@@ -47,6 +47,7 @@ class Book extends ActiveRecord{
 			'id' => 'ID',
 			'name' => 'Нименование',
 			'date_create' => 'Дата добавления',
+			'date_update' => 'Дата обновления',
 			'preview' => 'Превью',
 			'date' => 'Дата выхода книги',
 			'author' => 'Автор',
